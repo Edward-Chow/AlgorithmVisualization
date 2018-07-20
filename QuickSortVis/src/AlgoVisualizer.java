@@ -48,6 +48,10 @@ public class AlgoVisualizer {
     }
 
     private int partition(int l, int r) {
+        //优化数组几乎有序的情况
+        int p = (int)(Math.random()*(r-l+!)) + l;
+        data.swap(l, p);
+
         int v = data.get(l);
         setData(l, r, -1, l, -1);
         int j = l;
